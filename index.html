@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="벽해류 碧海流 — 그래픽 디자이너 포트폴리오">
+<meta property="og:title" content="벽해류 — Portfolio">
+<meta property="og:description" content="푸른 바다의 흐름 · Graphic Designer">
+<title>벽해류 碧海流 — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sky:#C8EEF5;--sky2:#A3DCE8;--mint:#5ECFBA;--md:#2AAEA0;
+  --ml:#D4F4EF;--navy:#0D2B35;--navy2:#1A3F4D;
+  --glass:rgba(255,255,255,0.68);--gb:rgba(94,207,186,0.32);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--navy);min-height:100vh;overflow-x:hidden;padding-bottom:60px}
+#wc{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.4}
+.taskbar{position:sticky;top:0;z-index:50;background:rgba(200,238,245,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--gb);height:42px;display:flex;align-items:center;padding:0 18px;gap:8px}
+.tb-dots{display:flex;gap:6px}
+.tbd{width:12px;height:12px;border-radius:50%;cursor:pointer;transition:opacity .18s}
+.tbd:hover{opacity:.65}
+.tbd-r{background:#FF6B6B}.tbd-y{background:#FFD93D}.tbd-g{background:var(--mint)}
+.tb-title{flex:1;text-align:center;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;color:var(--navy2);letter-spacing:.04em}
+.tb-nav{display:flex;gap:5px;margin-left:auto}
+.nb{padding:4px 13px;border:1px solid var(--gb);border-radius:6px;font-size:12px;font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--navy2);cursor:pointer;text-decoration:none;transition:all .18s;background:rgba(255,255,255,0.5)}
+.nb:hover{background:var(--mint);color:#fff;border-color:var(--mint)}
+.main{position:relative;z-index:1;padding:18px 18px 24px;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.fw{background:var(--glass);border:1px solid var(--gb);border-radius:13px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;animation:wIn .45s ease both}
+@keyframes wIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fw.d1{animation-delay:.05s}.fw.d2{animation-delay:.12s}.fw.d3{animation-delay:.20s}
+.ftb{display:flex;align-items:center;gap:8px;padding:10px 15px;background:rgba(163,220,232,0.48);border-bottom:1px solid var(--gb)}
+.ftb-dots{display:flex;gap:5px}
+.ftbd{width:10px;height:10px;border-radius:50%}
+.fn{font-size:12px;font-family:'Space Grotesk',sans-serif;color:var(--navy2);opacity:.8;margin-left:4px}
+.fbadge{margin-left:auto;font-size:10px;padding:2px 9px;background:var(--ml);color:var(--md);border-radius:20px;font-family:'Space Grotesk',sans-serif;font-weight:500}
+.fc{padding:20px 22px}
+.slbl{font-size:10px;font-family:'Space Grotesk',sans-serif;color:var(--md);font-weight:500;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
+.hero-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hav{width:78px;height:78px;border-radius:16px;background:linear-gradient(135deg,var(--md),#1a7a8a);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:32px}
+.ht h1{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2}
+.ht h1 .acc{color:var(--md)}
+.ht-sub{font-size:12px;color:var(--navy2);opacity:.7;margin-top:5px;font-family:'Space Grotesk',sans-serif}
+.ht-wave{font-size:12px;color:var(--navy2);opacity:.5;margin-top:5px;font-style:italic}
+.htags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.htag{font-size:10px;padding:2px 9px;border-radius:20px;background:rgba(94,207,186,0.18);color:var(--md);border:1px solid rgba(94,207,186,0.35);font-family:'Space Grotesk',sans-serif;font-weight:500}
+.fgrid{display:flex;gap:7px;flex-wrap:wrap;margin-left:auto}
+.fi-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 8px;border-radius:9px;cursor:pointer;transition:all .18s;border:1px solid transparent;min-width:76px}
+.fi-item:hover{background:rgba(94,207,186,0.13);border-color:var(--gb);transform:translateY(-2px)}
+.fi-item svg{width:46px;height:38px}
+.fi-lbl{font-size:10px;text-align:center;color:var(--navy);line-height:1.3}
+.gallery-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:var(--ml) transparent}
+.gallery-scroll::-webkit-scrollbar{height:4px}
+.gallery-scroll::-webkit-scrollbar-thumb{background:var(--ml);border-radius:4px}
+.gc{flex:0 0 200px;height:140px;border-radius:10px;overflow:hidden;background:var(--ml);border:1px solid var(--gb);position:relative;cursor:pointer;transition:transform .2s;display:flex;align-items:center;justify-content:center}
+.gc:hover{transform:scale(1.04)}
+.gc img{width:100%;height:100%;object-fit:cover}
+.gc-lbl{font-size:11px;color:var(--md);font-family:'Space Grotesk',sans-serif;font-weight:500;position:relative;z-index:1}
+.gc-add{flex:0 0 130px;height:140px;border-radius:10px;border:2px dashed var(--gb);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;gap:6px;transition:border-color .2s;background:rgba(255,255,255,0.25)}
+.gc-add:hover{border-color:var(--mint)}
+.gc-add span{font-size:26px}
+.gc-add p{font-size:11px;color:var(--navy2);opacity:.65;text-align:center;line-height:1.4}
+#fi{display:none}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.cr{display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:10px;border:1px solid var(--gb);background:rgba(255,255,255,0.45);cursor:pointer;transition:all .18s;position:relative}
+.cr:hover{background:rgba(94,207,186,0.13);border-color:var(--mint);transform:translateY(-2px)}
+.ci{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.cinfo h4{font-size:13px;font-weight:500;color:var(--navy)}
+.cinfo p{font-size:11px;color:var(--navy2);opacity:.65;margin-top:1px}
+.chint{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:10px;padding:2px 8px;background:var(--ml);color:var(--md);border-radius:20px;opacity:0;transition:opacity .18s;font-family:'Space Grotesk',sans-serif;font-weight:500;white-space:nowrap}
+.cr:hover .chint{opacity:1}
+.sbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(200,238,245,0.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--gb);height:28px;display:flex;align-items:center;padding:0 18px;font-size:11px;color:var(--navy2);font-family:'Space Grotesk',sans-serif;gap:14px;opacity:.85}
+.spulse{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.toast{position:fixed;bottom:38px;left:50%;transform:translateX(-50%) translateX(-40px);background:var(--md);color:#fff;padding:9px 22px;border-radius:22px;font-size:13px;font-family:'Noto Sans KR',sans-serif;opacity:0;transition:opacity .25s;pointer-events:none;z-index:400;white-space:nowrap}
+.toast.show{opacity:1}
+.float-btn{position:fixed;bottom:38px;right:22px;z-index:300;width:54px;height:54px;border-radius:50%;background:var(--md);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;transition:transform .2s,background .2s;box-shadow:0 4px 20px rgba(42,174,160,0.35)}
+.float-btn:hover{transform:scale(1.08);background:var(--mint)}
+.chat-popup-wrap{position:fixed;bottom:102px;right:22px;z-index:299;width:308px;pointer-events:none}
+.chat-popup{background:rgba(240,254,255,0.97);border:1px solid var(--gb);border-radius:14px;overflow:hidden;transform:scale(0.92) translateY(12px);transform-origin:bottom right;opacity:0;transition:transform .22s ease,opacity .22s ease;pointer-events:none;box-shadow:0 8px 32px rgba(42,174,160,0.2)}
+.chat-popup.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
+.cp-header{display:flex;align-items:center;gap:8px;padding:11px 14px;background:rgba(163,220,232,0.5);border-bottom:1px solid var(--gb)}
+.cp-avatar{width:30px;height:30px;border-radius:50%;background:var(--md);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cp-name{font-size:13px;font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--navy2)}
+.cp-status{font-size:10px;color:var(--md);margin-left:auto;display:flex;align-items:center;gap:4px}
+.cp-dot{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s infinite}
+.cp-close{margin-left:8px;font-size:16px;cursor:pointer;color:var(--navy2);opacity:.55;background:none;border:none;line-height:1;transition:opacity .15s}
+.cp-close:hover{opacity:1}
+.cp-msgs{height:230px;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;gap:7px;scrollbar-width:thin;scrollbar-color:var(--ml) transparent}
+.cp-msgs::-webkit-scrollbar{width:3px}
+.cp-msgs::-webkit-scrollbar-thumb{background:var(--ml);border-radius:3px}
+.msg{max-width:88%;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.55}
+.msg-b{background:rgba(94,207,186,0.17);color:var(--navy);border-radius:10px 10px 10px 2px;align-self:flex-start;border:1px solid rgba(94,207,186,0.25)}
+.msg-u{background:var(--md);color:#fff;border-radius:10px 10px 2px 10px;align-self:flex-end}
+.cp-quick{display:flex;gap:5px;flex-wrap:wrap;padding:7px 12px 2px;border-top:1px solid var(--gb)}
+.qb{font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--gb);background:rgba(255,255,255,0.6);color:var(--navy2);cursor:pointer;transition:all .15s;font-family:'Noto Sans KR',sans-serif}
+.qb:hover{background:var(--mint);color:#fff;border-color:var(--mint)}
+.cp-input-row{display:flex;gap:6px;padding:8px 12px}
+#cp-input{flex:1;padding:8px 11px;border-radius:7px;border:1px solid var(--gb);background:rgba(255,255,255,0.75);color:var(--navy);font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;transition:border .15s}
+#cp-input:focus{border-color:var(--mint)}
+.cp-send{padding:8px 13px;border-radius:7px;border:none;background:var(--md);color:#fff;cursor:pointer;font-size:13px;font-family:'Space Grotesk',sans-serif;font-weight:500;transition:opacity .15s}
+.cp-send:hover{opacity:.82}
+.lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(13,43,53,0.82);align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:88vw;max-height:86vh;border-radius:10px}
+.lb-x{position:absolute;top:18px;right:22px;font-size:28px;color:#fff;cursor:pointer;opacity:.7;transition:opacity .15s}
+.lb-x:hover{opacity:1}
+@media(max-width:540px){
+  .fgrid{display:none}
+  .ht h1{font-size:20px}
+  .tb-title{display:none}
+  .fc{padding:14px 16px}
+  .chat-popup-wrap{right:12px;width:calc(100vw - 24px)}
+  .float-btn{right:14px}
+}
+</style>
+</head>
+<body>
+<canvas id="wc"></canvas>
+<div class="taskbar">
+  <div class="tb-dots"><div class="tbd tbd-r"></div><div class="tbd tbd-y"></div><div class="tbd tbd-g"></div></div>
+  <div class="tb-title">Portfolio.os — 벽해류 碧海流</div>
+  <nav class="tb-nav">
+    <a class="nb" href="#gallery">디자인</a>
+    <a class="nb" href="#contact">연락처</a>
+  </nav>
+</div>
+<main class="main">
+  <div class="fw d1">
+    <div class="ftb">
+      <div class="ftb-dots"><div class="ftbd tbd-r"></div><div class="ftbd tbd-y"></div><div class="ftbd tbd-g"></div></div>
+      <span class="fn">벽해류_profile.psd</span><span class="fbadge">ONLINE</span>
+    </div>
+    <div class="fc">
+      <div class="hero-row">
+        <div class="hav">🌊</div>
+        <div class="ht">
+          <h1>벽해류<span class="acc"> 碧海流</span></h1>
+          <div class="ht-sub">Graphic Designer · Motion · Branding</div>
+          <div class="ht-wave">푸른 바다의 흐름처럼, 끊임없이 흘러가는 디자인</div>
+          <div class="htags">
+            <span class="htag">Graphic Design</span><span class="htag">Branding</span>
+            <span class="htag">Motion</span><span class="htag">Illustration</span><span class="htag">UI/UX</span>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div class="fi-item" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+            <svg viewBox="0 0 46 38"><rect x="0" y="7" width="46" height="31" rx="4" fill="#A3DCE8"/><rect x="0" y="7" width="16" height="7" rx="3" fill="#5ECFBA"/><rect x="1" y="12" width="44" height="24" rx="3" fill="#C8EEF5" stroke="#5ECFBA" stroke-width="1"/></svg>
+            <span class="fi-lbl">디자인</span>
+          </div>
+          <div class="fi-item" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <svg viewBox="0 0 46 38"><rect x="4" y="2" width="38" height="34" rx="4" fill="#F0FEFF" stroke="#A3DCE8" stroke-width="1.3"/><rect x="9" y="9" width="20" height="2" rx="1" fill="#5ECFBA"/><rect x="9" y="14" width="28" height="2" rx="1" fill="#A3DCE8"/><rect x="9" y="19" width="16" height="2" rx="1" fill="#A3DCE8"/></svg>
+            <span class="fi-lbl">연락처</span>
+          </div>
+          <div class="fi-item" onclick="toggleChat()">
+            <svg viewBox="0 0 46 38"><rect x="2" y="4" width="42" height="30" rx="5" fill="#D4F4EF" stroke="#5ECFBA" stroke-width="1"/><rect x="7" y="12" width="18" height="3" rx="1.5" fill="#2AAEA0"/><rect x="7" y="18" width="14" height="3" rx="1.5" fill="#A3DCE8"/><circle cx="37" cy="10" r="5" fill="#2AAEA0"/></svg>
+            <span class="fi-lbl">문의 챗봇</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fw d2" id="gallery">
+    <div class="ftb">
+      <div class="ftb-dots"><div class="ftbd tbd-r"></div><div class="ftbd tbd-y"></div><div class="ftbd tbd-g"></div></div>
+      <span class="fn">works / design_files</span><span class="fbadge">← 스크롤</span>
+    </div>
+    <div class="fc">
+      <div class="slbl">디자인 갤러리 — 가로 스크롤</div>
+      <div class="gallery-scroll" id="gs">
+        <div class="gc-add" onclick="document.getElementById('fi').click()">
+          <span>🗂️</span><p>클릭 또는<br>드래그 업로드</p>
+        </div>
+        <div class="gc"><span class="gc-lbl">project_01</span></div>
+        <div class="gc"><span class="gc-lbl">project_02</span></div>
+        <div class="gc"><span class="gc-lbl">project_03</span></div>
+        <div class="gc"><span class="gc-lbl">project_04</span></div>
+        <div class="gc"><span class="gc-lbl">project_05</span></div>
+      </div>
+      <input type="file" id="fi" multiple accept="image/*">
+    </div>
+  </div>
+  <div class="fw d3" id="contact">
+    <div class="ftb">
+      <div class="ftb-dots"><div class="ftbd tbd-r"></div><div class="ftbd tbd-y"></div><div class="ftbd tbd-g"></div></div>
+      <span class="fn">contact_info.txt</span><span class="fbadge">CLICK TO COPY</span>
+    </div>
+    <div class="fc">
+      <div class="slbl">연락처 — 클릭하면 복사돼요</div>
+      <div class="contact-grid">
+        <div class="cr" onclick="doCopy('discord','@byeokhaeryu')">
+          <div class="ci" style="background:rgba(88,101,242,.13)">💬</div>
+          <div class="cinfo"><h4>Discord</h4><p>@byeokhaeryu</p></div><span class="chint">⎘ 복사</span>
+        </div>
+        <div class="cr" onclick="doCopy('email','byeokhaeryu@gmail.com')">
+          <div class="ci" style="background:rgba(94,207,186,.13)">✉️</div>
+          <div class="cinfo"><h4>E-mail</h4><p>byeokhaeryu@gmail.com</p></div><span class="chint">⎘ 복사</span>
+        </div>
+        <div class="cr" onclick="doCopy('twitter','@byeokhaeryu')">
+          <div class="ci" style="background:rgba(29,161,242,.1)">🐦</div>
+          <div class="cinfo"><h4>Twitter / X</h4><p>@byeokhaeryu</p></div><span class="chint">⎘ 복사</span>
+        </div>
+        <div class="cr" onclick="doCopy('instagram','@byeokhaeryu')">
+          <div class="ci" style="background:rgba(225,48,108,.1)">📸</div>
+          <div class="cinfo"><h4>Instagram</h4><p>@byeokhaeryu</p></div><span class="chint">⎘ 복사</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="sbar">
+  <div class="spulse"></div>
+  <span>Portfolio.os v2024</span>
+  <span>· 벽해류 碧海流 ·</span>
+  <span style="margin-left:auto;opacity:.55">© 2024 벽해류. All rights reserved.</span>
+</div>
+<div class="toast" id="toast"></div>
+<button class="float-btn" onclick="toggleChat()" id="float-btn" aria-label="문의 채팅">💬</button>
+<div class="chat-popup-wrap">
+  <div class="chat-popup" id="chat-popup">
+    <div class="cp-header">
+      <div class="cp-avatar">🌊</div>
+      <div class="cp-name">벽해류 BOT</div>
+      <div class="cp-status"><div class="cp-dot"></div>온라인</div>
+      <button class="cp-close" onclick="toggleChat()" aria-label="닫기">✕</button>
+    </div>
+    <div class="cp-msgs" id="cp-msgs">
+      <div class="msg msg-b">안녕하세요! 벽해류 포트폴리오에 오셨군요 🌊<br>궁금한 점을 눌러보거나 직접 입력해 주세요!</div>
+    </div>
+    <div class="cp-quick">
+      <button class="qb" onclick="sq('작업 스타일이 어때요?')">작업 스타일</button>
+      <button class="qb" onclick="sq('의뢰는 어떻게 해요?')">의뢰 방법</button>
+      <button class="qb" onclick="sq('주로 어떤 작업을 해요?')">주요 작업</button>
+      <button class="qb" onclick="sq('작업 기간이 어떻게 돼요?')">작업 기간</button>
+      <button class="qb" onclick="sq('소프트웨어는 뭐 써요?')">사용 툴</button>
+    </div>
+    <div class="cp-input-row">
+      <input id="cp-input" placeholder="메세지 입력..." onkeydown="if(event.key==='Enter')sc()">
+      <button class="cp-send" onclick="sc()">전송</button>
+    </div>
+  </div>
+</div>
+<div class="lb" id="lb" onclick="closeLb()">
+  <span class="lb-x">✕</span>
+  <img id="lb-img" src="" alt="디자인 크게 보기">
+</div>
+<script>
+(function(){
+  const c=document.getElementById('wc'),ctx=c.getContext('2d');
+  let W,H,t=0;
+  function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  r();window.addEventListener('resize',r);
+  const ws=[
+    {a:28,f:.008,s:.016,y:.25,cl:'rgba(94,207,186,0.17)',o:0},
+    {a:20,f:.012,s:.022,y:.45,cl:'rgba(42,174,160,0.11)',o:Math.PI},
+    {a:34,f:.006,s:.013,y:.65,cl:'rgba(94,207,186,0.1)',o:1.1},
+    {a:22,f:.01,s:.019,y:.8,cl:'rgba(163,220,232,0.18)',o:2},
+  ];
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ws.forEach(w=>{
+      ctx.beginPath();ctx.moveTo(0,H*w.y);
+      for(let x=0;x<=W;x+=4){ctx.lineTo(x,H*w.y+Math.sin(x*w.f+t*w.s+w.o)*w.a)}
+      ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();
+      ctx.fillStyle=w.cl;ctx.fill();
+    });
+    t++;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+const QA={
+  '작업 스타일이 어때요?':'깔끔하고 감각적인 스타일을 좋아해요. 파란/민트 계열 색감과 여백을 살린 디자인을 주로 작업합니다 🎨',
+  '의뢰는 어떻게 해요?':'Discord 또는 이메일로 연락 주세요! 작업 내용·일정·예산을 알려주시면 견적을 드려요.',
+  '주로 어떤 작업을 해요?':'로고, 브랜딩, 포스터, SNS 콘텐츠, 모션 그래픽 등 다양한 그래픽 디자인을 해요 ✨',
+  '작업 기간이 어떻게 돼요?':'난이도에 따라 보통 3일~2주 소요됩니다. 급한 작업은 상담 후 조율 가능해요.',
+  '소프트웨어는 뭐 써요?':'Photoshop, Illustrator, After Effects, Figma를 주로 사용해요 💻',
+};
+const FB='좋은 질문이에요! 자세한 내용은 Discord나 이메일로 문의해 주시면 빠르게 답변 드릴게요 🌊';
+function addMsg(t,u){
+  const b=document.getElementById('cp-msgs');
+  const d=document.createElement('div');
+  d.className='msg '+(u?'msg-u':'msg-b');
+  d.innerHTML=t;b.appendChild(d);b.scrollTop=b.scrollHeight;
+}
+function sq(q){addMsg(q,true);setTimeout(()=>addMsg(QA[q]||FB,false),360)}
+function sc(){
+  const inp=document.getElementById('cp-input');
+  const v=inp.value.trim();if(!v)return;
+  addMsg(v,true);inp.value='';
+  const k=Object.keys(QA).find(k=>v.includes(k.slice(0,4)));
+  setTimeout(()=>addMsg(k?QA[k]:FB,false),360);
+}
+let chatOpen=false;
+function toggleChat(){
+  chatOpen=!chatOpen;
+  const p=document.getElementById('chat-popup');
+  const btn=document.getElementById('float-btn');
+  if(chatOpen){p.classList.add('open');btn.textContent='✕';btn.style.background='#e05555'}
+  else{p.classList.remove('open');btn.textContent='💬';btn.style.background=''}
+}
+const fi=document.getElementById('fi');
+const gs=document.getElementById('gs');
+const addEl=gs.querySelector('.gc-add');
+function addCard(url){
+  const d=document.createElement('div');d.className='gc';
+  const img=document.createElement('img');img.src=url;img.alt='작업물';
+  img.addEventListener('click',()=>openLb(url));
+  d.appendChild(img);addEl.insertAdjacentElement('afterend',d);
+}
+fi.addEventListener('change',function(){Array.from(this.files).forEach(f=>{if(f.type.startsWith('image/'))addCard(URL.createObjectURL(f))})});
+const garea=document.getElementById('gallery');
+garea.addEventListener('dragover',e=>e.preventDefault());
+garea.addEventListener('drop',e=>{e.preventDefault();Array.from(e.dataTransfer.files).forEach(f=>{if(f.type.startsWith('image/'))addCard(URL.createObjectURL(f))})});
+function openLb(url){document.getElementById('lb-img').src=url;document.getElementById('lb').classList.add('open')}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();if(chatOpen)toggleChat()}});
+const toast=document.getElementById('toast');
+function doCopy(t,v){
+  if(navigator.clipboard){navigator.clipboard.writeText(v).catch(()=>fbCopy(v))}else fbCopy(v);
+  toast.textContent=v+' 복사됨! ✓';toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),2000);
+}
+function fbCopy(tx){const el=document.createElement('textarea');el.value=tx;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el)}
+</script>
+</body>
+</html>
