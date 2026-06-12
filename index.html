@@ -198,13 +198,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--nav
           <div class="ci" style="background:rgba(94,207,186,.13)">✉️</div>
           <div class="cinfo"><h4>E-mail</h4><p>byeokhaeryu@gmail.com</p></div><span class="chint">⎘ 복사</span>
         </div>
-        <div class="cr" onclick="doCopy('twitter','@byeokhaeryu')">
+        <div class="cr" onclick="doCopy('twitter','@khaeryu_Design')">
           <div class="ci" style="background:rgba(29,161,242,.1)">🐦</div>
           <div class="cinfo"><h4>Twitter / X</h4><p>@byeokhaeryu</p></div><span class="chint">⎘ 복사</span>
-        </div>
-        <div class="cr" onclick="doCopy('instagram','@byeokhaeryu')">
-          <div class="ci" style="background:rgba(225,48,108,.1)">📸</div>
-          <div class="cinfo"><h4>Instagram</h4><p>@byeokhaeryu</p></div><span class="chint">⎘ 복사</span>
         </div>
       </div>
     </div>
@@ -274,10 +270,10 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--nav
   draw();
 })();
 const QA={
-  '작업 스타일이 어때요?':'깔끔하고 감각적인 스타일을 좋아해요. 파란/민트 계열 색감과 화려한 디자인을 주로 작업합니다 🎨',
+  '작업 스타일이 어때요?':'파란/민트 계열 색감과 화려한 보정 베이스의 디자인을 주로 작업합니다! 깔끔한 디자인도 가능합니다 🎨',
   '의뢰는 어떻게 해요?':'Discord 또는 이메일로 연락 주세요! 작업 내용·일정·예산을 알려주시면 견적을 드려요.',
   '주로 어떤 작업을 해요?':'썸네일 디자인, 포스터, 로고 등 다양한 그래픽 디자인을 해요 ✨',
-  '작업 기간이 어떻게 돼요?':'난이도에 따라 보통 1일~2주 소요됩니다. 급한 작업은 상담 후 조율 가능해요.',
+  '작업 기간이 어떻게 돼요?':'보통 1일~2주 소요됩니다. 급한 작업은 상담 후 조율 가능해요.',
   '소프트웨어는 뭐 써요?':'Photoshop, Illustrator, After Effects, Figma, CLIP STUDIO PAINT를 주로 사용해요 💻',
   '그 외 문의가 있어요':'연락처 중 편하신 곳으로 문의주세요!',
 };
@@ -323,7 +319,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();if(chatOp
 const toast=document.getElementById('toast');
 function doCopy(t,v){
   if(navigator.clipboard){navigator.clipboard.writeText(v).catch(()=>fbCopy(v))}else fbCopy(v);
-  toast.textContent=v+' 복사됨! ✓';toast.classList.add('show');
+  toast.textContent=v+' 버블봇이 대신 복사해드렸어요! 연락을 기다릴게요>< ✓';toast.classList.add('show');
   setTimeout(()=>toast.classList.remove('show'),2000);
 }
 function fbCopy(tx){const el=document.createElement('textarea');el.value=tx;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el)}
