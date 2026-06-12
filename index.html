@@ -222,12 +222,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--nav
   <div class="chat-popup" id="chat-popup">
     <div class="cp-header">
       <div class="cp-avatar">🌊</div>
-      <div class="cp-name">벽해류 BOT</div>
+      <div class="cp-name">물고기 봇</div>
       <div class="cp-status"><div class="cp-dot"></div>온라인</div>
       <button class="cp-close" onclick="toggleChat()" aria-label="닫기">✕</button>
     </div>
     <div class="cp-msgs" id="cp-msgs">
-      <div class="msg msg-b">안녕하세요! 벽해류 포트폴리오에 오셨군요 🌊<br>궁금한 점을 눌러보거나 직접 입력해 주세요!</div>
+      <div class="msg msg-b">안녕하세요! 벽해류 디자이너님의 어항에 사는 물고기입니다! 아래 버튼을 눌러 궁금한 것을 물어봐주세요</div>
     </div>
     <div class="cp-quick">
       <button class="qb" onclick="sq('작업 스타일이 어때요?')">작업 스타일</button>
@@ -235,6 +235,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--nav
       <button class="qb" onclick="sq('주로 어떤 작업을 해요?')">주요 작업</button>
       <button class="qb" onclick="sq('작업 기간이 어떻게 돼요?')">작업 기간</button>
       <button class="qb" onclick="sq('소프트웨어는 뭐 써요?')">사용 툴</button>
+      <button class="qb" onclick="sq('그 외 문의가 있어요')">연락처</button>
     </div>
     <div class="cp-input-row">
       <input id="cp-input" placeholder="메세지 입력..." onkeydown="if(event.key==='Enter')sc()">
@@ -271,11 +272,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--sky);color:var(--nav
   draw();
 })();
 const QA={
-  '작업 스타일이 어때요?':'깔끔하고 감각적인 스타일을 좋아해요. 파란/민트 계열 색감과 여백을 살린 디자인을 주로 작업합니다 🎨',
+  '작업 스타일이 어때요?':'깔끔하고 감각적인 스타일을 좋아해요. 파란/민트 계열 색감과 화려한 디자인을 주로 작업합니다 🎨',
   '의뢰는 어떻게 해요?':'Discord 또는 이메일로 연락 주세요! 작업 내용·일정·예산을 알려주시면 견적을 드려요.',
   '주로 어떤 작업을 해요?':'로고, 브랜딩, 포스터, SNS 콘텐츠, 모션 그래픽 등 다양한 그래픽 디자인을 해요 ✨',
-  '작업 기간이 어떻게 돼요?':'난이도에 따라 보통 3일~2주 소요됩니다. 급한 작업은 상담 후 조율 가능해요.',
-  '소프트웨어는 뭐 써요?':'Photoshop, Illustrator, After Effects, Figma를 주로 사용해요 💻',
+  '작업 기간이 어떻게 돼요?':'난이도에 따라 보통 1일~2주 소요됩니다. 급한 작업은 상담 후 조율 가능해요.',
+  '소프트웨어는 뭐 써요?':'Photoshop, Illustrator, After Effects, Figma, CLIP STUDIO PAINT를 주로 사용해요 💻',
+  '그 외 문의가 있어요':'연락처 중 편하신 곳으로 문의주세요!',
 };
 const FB='좋은 질문이에요! 자세한 내용은 Discord나 이메일로 문의해 주시면 빠르게 답변 드릴게요 🌊';
 function addMsg(t,u){
