@@ -222,8 +222,8 @@ body {
 }
 
 .hav {
-  width: 78px;
-  height: 78px;
+  width: 126px;
+  /* height: 78px; */
   border-radius: 16px;
   background: linear-gradient(135deg, var(--md), #1a7a8a);
   display: flex;
